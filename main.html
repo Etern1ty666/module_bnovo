@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <style>
+    body{
+        background: linear-gradient(-45deg, white, lightblue);
+        height: 1000px;
+    }
+    header {font-family: 'Trebuchet MS', 'Georgia'}
+    h2{
+        text-align: center;
+    }
+    h3{
+        text-align: center;
+    }
+    form{
+        text-align: center;
+    }
+    div {font-family: 'Trebuchet MS', 'Georgia'}
+    div{
+        text-align: center;
+        padding: 10px;
+    }
+    a.knopka {
+    text-align: center;
+    color: #fff; /* цвет текста */
+    text-decoration: none; /* убирать подчёркивание у ссылок */
+    user-select: none; /* убирать выделение текста */
+    background: rgb(102,204,255); /* фон кнопки */
+    padding: .7em 1.5em; /* отступ от текста */
+    margin-left: 10px;
+    }
+    a.knopka:hover { background: rgb(51,153,255); } /* при наведении курсора мышки */
+    a.knopka:active { background: rgb(51,153,255); } /* при нажатии */
+    </style>
+</head>
+<body>
+<h2>Введите дату заеда и дату отбытия</h2>
+<form method="post" action="/search">
+    <input type="text" name="text">
+    <input type="text" name="tag">
+    <button type="submit">Искать</button>
+
+</form>
+
+<h3>Результаты:</h3>
+{% for message in messages %}
+<div>{{ message }}</div>
+<div><a href="https://reservationsteps.ru/rooms/index/0fec8561-59e3-49e7-84aa-40ea40e48643?&dfrom=20-05-2022&dto=22-05-2022&lang=ru" class="knopka">Забронировать</a></div>
+
+{% endfor %}
+
+</body>
+</html>
